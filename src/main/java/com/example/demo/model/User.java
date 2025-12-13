@@ -12,6 +12,7 @@ public class User {
     private Long id;
 
     @Column
+    // private String profilePic;
     private String firstName;
     private String lastName;
 
