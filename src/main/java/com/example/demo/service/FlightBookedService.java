@@ -5,6 +5,7 @@ import com.example.demo.model.FlightBooked;
 import com.example.demo.repository.FlightBookedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class FlightBookedService {
@@ -36,5 +37,9 @@ public class FlightBookedService {
             e.printStackTrace();
             return "Flight booking failed";
         }
+    }
+
+    public List<FlightBooked> getFlightsByEmail(String email) {
+        return flightRepo.findByEmail(email);
     }
 }
