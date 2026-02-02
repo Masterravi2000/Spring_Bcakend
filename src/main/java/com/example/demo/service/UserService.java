@@ -25,7 +25,6 @@ public class UserService {
             }
 
             User user = new User();
-            // user.setProfilePic(req.getProfilePic());
             user.setFirstName(req.getFirstName());
             user.setLastName(req.getLastName());
             user.setEmail(req.getEmail());
