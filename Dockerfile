@@ -3,7 +3,13 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 COPY . .
 
+# Give execute permission to mvnw inside the container
+RUN chmod +x mvnw
+
+# Build the project
 RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
+
+# Start the Spring Boot app
 CMD ["sh", "-c", "java -jar target/*.jar"]
